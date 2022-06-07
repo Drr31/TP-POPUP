@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<title>Jquery</title>
+	<style>
+		html {
+			font-family: sans-serif;
+			color: #2c3e50;
+			box-sizing: content-box;
+		}
+
+		html,
+		body {
+			padding: 0;
+			margin: 0;
+		}
+
+		body {
+			background-color: #ed8545;
+
+		}
+
+		section {
+			box-shadow: 0px 0px 8px rgba(220, 220, 220, 0.7);
+			background-color: #ecf0f1;
+			padding: 20px;
+			margin: 100px;
+		}
+		
+		#overlay {
+			display:flex;
+			justify-content: center;
+			align-items:center;
+			top:0;
+			left:0;
+			height:100%;
+			width:100%;
+			position:absolute;
+			background-color:rgba(15, 149, 142, 0.5);
+		}
+
+		form{
+			background-color:#0c7954;
+			position:relative;
+			padding:50px;
+			width:300px;
+
+		}
+		
+		#fermer{
+			color:#0c7954;
+			background-color:white;
+			border:solid;
+			border-radius:50%;
+			border-color:#0c7954;
+			border-width:2px;
+			text-decoration:none;
+			position:absolute;
+			font-weight:bold;
+			padding:4px 8px 4px 8px;
+			top:-20px;
+			right:-20px;
+		}
+
+		label{
+			right:250px;
+			position:absolute;
+			margin-top:2px;
+			margin-bottom:2px;
+			color: white;
+		}
+
+		input, textarea{
+			margin-left:125px;
+			margin-top:2px;
+			margin-bottom:2px;
+		}
+
+		p button{
+			position:absolute;
+			right:20px;
+			margin:5px;
+		}
+
+		#contact{ color: #0c7954;
+
+		}
+
+		h1{
+			color: #0c7954;
+		}
+
+		p{
+			font-family: 'Quicksand', sans-serif;
+		}
+
+	</style>
+</head>
+
+<body>
+	<section>
+		<h1>Travaillons avec Jquery</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus eros eros, quis feugiat felis aliquet id. Mauris aliquet ut risus eget cursus. Proin iaculis dolor felis, scelerisque tempor mi fringilla vitae. Curabitur venenatis ut mauris eget suscipit. Aliquam eu cursus ipsum, ac mattis leo. Vivamus sit amet ante ultricies, pulvinar justo consectetur, aliquet mauris. Pellentesque aliquet diam id dui iaculis ultrices. Nulla commodo tincidunt metus eget molestie. Maecenas quis arcu at mi semper porta. Sed quam ante, interdum at diam id, scelerisque iaculis est. Curabitur ac purus ex. Mauris sed vestibulum velit. Nullam convallis rutrum eleifend. Duis egestas nisi in malesuada consectetur.</p>
+
+		<p>Etiam eget urna non eros viverra viverra. Vestibulum dictum tellus id urna aliquam bibendum. Donec at molestie mauris, non vestibulum justo. Nulla pulvinar orci at imperdiet viverra. Sed sed massa semper, vulputate ipsum et, venenatis sapien. Aliquam sagittis mauris a lorem egestas, non consectetur diam dapibus. Morbi tempor ultricies orci, eleifend vestibulum lacus lacinia eget. Ut id euismod neque, non elementum justo. Proin tincidunt metus dolor, nec laoreet lacus pulvinar eget.</p>
+		<p><a href="#" id="contact">Contactez-nous</a></p>
+	</section>
+	<div id="overlay">
+		<form>
+			<a href="#" id="fermer">X</a>
+			<label for="">Nom</label>
+			<input type="text"><br>
+			<label for="">Prenom</label>
+			<input type="text"><br>
+			<label for="">Email</label>
+			<input type="text"><br>
+			<label for="">Message</label>
+			<textarea placeholder="Votre message"></textarea>
+			<p><button type="submit">Envoyer</button></p>
+		</form>
+	</div><!-- /overlay -->
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		// Une fois la page chargée, on gère les événements
+		$( document ).ready(function() {
+			$("#overlay").hide();
+			$("#contact").click(function(){
+				$("#overlay").fadeIn();
+			});
+			$("#fermer").click(function(){
+				$("#overlay").fadeOut();
+			});
+		});
+	</script>
+</body>
+</html>
